@@ -35,6 +35,10 @@ item_hire_label = ' '
 clear_button = ' '
 check_button = ' '
 enter_button = ' '
+receipt_id = ' '
+receipt_id_entry = ' '
+receipt_id_message = ' '
+receipt_id_label = ' '
 
 
 # minimum and maximum number of items hired
@@ -131,37 +135,41 @@ def main():
     global main_window, root
     global full_name, item_hire, item_amount, receipt_id, check, enter, clear, all_items_list
 
-    main_window = tkinter.Tk()
-
     root = tkinter.Tk()
 
     # create main frame for buttons and entry fields
     main_frame = tkinter.Frame(root)
 
     # create gap between main_frame and print_frame
-    main_frame.pack(pady=10)
+    main_frame.pack(side=tkinter.TOP, anchor=tkinter.NW)
 
     # create empty list to store what items for each group
     all_items_list = []
 
     # create labels and entry fields for user to input info
     full_name_label = tkinter.Label(main_frame, text='Full name')
-    full_name_label.grid(row=1, column=0)
+    full_name_label.grid(row=1, column=1)
 
-    full_name_entry = tkinter.Entry(main_frame)
-    full_name_entry.grid(row=1, column=1)
+    full_name_entry = tkinter.Entry(main_frame, font=('Calibri', 20))
+    full_name_entry.grid(row=2, column=2)
 
     item_hire_label = tkinter.Label(main_frame, text='Item for hire')
-    item_hire_label.grid(row=2, column=0)
+    item_hire_label.grid(row=3, column=1)
 
-    item_hire_entry = tkinter.Entry(main_frame)
-    item_hire_entry.grid(row=2, column=1)
+    item_hire_entry = tkinter.Entry(main_frame, font=('Calibri', 20))
+    item_hire_entry.grid(row=4, column=1)
 
     item_amount_label = tkinter.Label(main_frame, text='Item amount')
-    item_amount_label.grid(row=3, column=0)
+    item_amount_label.grid(row=6, column=1)
 
-    item_amount_entry = tkinter.Entry(main_frame)
+    item_amount_entry = tkinter.Entry(main_frame, font=('Calibri', 20))
     item_amount_entry.grid(row=3, column=1)
+
+    receipt_id_entry = tkinter.Entry(main_frame, font=('Calibri', 20))
+    receipt_id_entry.grid(row=2, column=1)
+
+    receipt_id_label = tkinter.Label(main_frame, text='Receipt ID')
+    receipt_id_label.grid(row=4, column=4)
 
     # create error labels to display error messages
     full_name_message = tkinter.Label(main_frame)
@@ -185,7 +193,7 @@ def main():
 
 
 
-    main_window.mainloop()
+    root.geometry('900x400')
     root.mainloop()
 
 main()
