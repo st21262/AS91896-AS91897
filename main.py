@@ -70,7 +70,7 @@ def store_details():
     enter_item.grid(row=3, column=4)
     if item.get().isnumeric():
         enter_item.config(text="Please enter an item", fg='red')
-    elif name.index("end") == 0:
+    elif len(item.get()) == 0:
         enter_item.config(text="Please enter an item", fg='red')
     else:
         enter_item.config(text="                                        ")
