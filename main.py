@@ -44,7 +44,7 @@ def store_details():
     enter_name = Label(main_window, font=("Bold"), text="")
     enter_name.grid(row=1, column=4)
     if name.get().isnumeric():
-        enter_name.config(text="Please Enter a Name", fg='red')
+        enter_name.config(text="Please enter a name", fg='red')
     else:
         enter_name.config(text="                                        ")
         name_display = name.get()
@@ -59,13 +59,13 @@ def store_details():
         receipt_display = receipt.get()
         receipt.delete(0, 'end')
     except ValueError:
-        enter_receipt_number.config(text="Please Enter a Number", fg='red')
+        enter_receipt_number.config(text="Please enter a number", fg='red')
 
         # Checking if the Item value is a number
     enter_item = Label(main_window, font=("Bold"), text="")
     enter_item.grid(row=3, column=4)
     if item.get().isnumeric():
-        enter_item.config(text="Please Enter an item", fg='red')
+        enter_item.config(text="Please enter an item", fg='red')
     else:
         enter_item.config(text="                                        ")
         item_display = item.get()
@@ -80,7 +80,7 @@ def store_details():
         quantity_display = quantity.get()
         quantity.delete(0, 'end')
     except ValueError:
-        enter_quantity_number.config(text="Please Item amount", fg='red')
+        enter_quantity_number.config(text="Please enter item amount", fg='red')
 
 
 # Print the Data
@@ -147,25 +147,31 @@ def GUI():
     item.grid(row=3, column=2, padx=10, pady=10, columnspan=2)
 
     # Quantity
-    Label(main_window, text="Item amount :").grid(row=4, column=1)  # Making a Label for the Quantity of Items Hired
+    Label(main_window, text="Item amount :").grid(row=4, column=1)
+
+    # Making a Label for the Quantity of Items Hired
     quantity = Entry(main_window)
     quantity.grid(row=4, column=2, padx=10, pady=10, columnspan=2)
 
     # Quit Button
     Button(main_window, text="Quit", width=8, command=quit).grid(row=0, column=1, padx=5,
-                                                                 pady=10)  # Making a button to Quit the Program
+                                                                 pady=10)
+    # Making a button to Quit the Program
 
     # Store Details
-    Button(main_window, text="Store Details", width=8, command=store_details).grid(row=0, column=2, padx=5,
-                                                                                   pady=10)  # Making a Button to Store the details you enter
+    Button(main_window, text="Check", width=8, command=store_details).grid(row=0, column=2, padx=5,
+                                                                                   pady=10)
+    # Making a Button to Store the details you enter
 
     # Print Details
-    Button(main_window, text="Print Details", width=8, command=print_details).grid(row=0, column=3, padx=5,
-                                                                                   pady=10)  # Button to execute the print command
+    Button(main_window, text="Enter", width=8, command=print_details).grid(row=0, column=3, padx=5,
+                                                                                   pady=10)
+    # Button to execute the print command
 
     # Return Item Button
-    Button(main_window, text="Return Item", width=8, command=return_item).grid(row=0, column=4, padx=5,
-                                                                               pady=10)  # Button to execute the return item command
+    Button(main_window, text="Clear", width=8, command=return_item).grid(row=0, column=4, padx=5,
+                                                                               pady=10)
+    # Button to execute the return item command
 
 
 # Running the Interface
