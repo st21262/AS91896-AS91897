@@ -17,7 +17,7 @@ How many of the item the customer has hired between 1 and 500
 When an item is returned she needs to be able to delete it, so it no longer shows.
 """
 
-# Julie's Party Hire Store Tracker
+# Julie's Party Hire
 
 from tkinter import *
 
@@ -43,7 +43,11 @@ def store_details():
     # Checking if the Name value is a number
     enter_name = Label(main_window, font=("Bold"), text="")
     enter_name.grid(row=1, column=4)
+
+
     if name.get().isnumeric():
+        enter_name.config(text="Please enter a name", fg='red')
+    elif name.index("end") == 0:
         enter_name.config(text="Please enter a name", fg='red')
     else:
         enter_name.config(text="                                        ")
@@ -65,6 +69,8 @@ def store_details():
     enter_item = Label(main_window, font=("Bold"), text="")
     enter_item.grid(row=3, column=4)
     if item.get().isnumeric():
+        enter_item.config(text="Please enter an item", fg='red')
+    elif name.index("end") == 0:
         enter_item.config(text="Please enter an item", fg='red')
     else:
         enter_item.config(text="                                        ")
@@ -132,12 +138,12 @@ def GUI():
     global details, name, receipt, item, quantity, list_entries, total_names, return_item_label
 
     # Name
-    Label(main_window, text="Full Name :").grid(row=1, column=1, padx=20)  # Making a Label for the Name Entry
+    Label(main_window, text="Full Name :").grid(row=1, column=1)  # Making a Label for the Name Entry
     name = Entry(main_window)
     name.grid(row=1, column=2, padx=10, pady=10, columnspan=2)
 
-    # Reciept
-    Label(main_window, text="Reciept ID :").grid(row=2, column=1)  # Making a Label for the Reciept Number
+    # Receipt2
+    Label(main_window, text="Receipt ID :").grid(row=2, column=1)  # Making a Label for the Receipt Number
     receipt = Entry(main_window)
     receipt.grid(row=2, column=2, padx=10, pady=10, columnspan=2)
 
